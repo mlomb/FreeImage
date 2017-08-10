@@ -35,6 +35,7 @@ it under the terms of the one of three licenses as you choose:
 #include "libraw/libraw.h"
 #include "internal/defines.h"
 
+#include "swab.h"
 
 #if defined(_WIN32)
 #if defined _MSC_VER
