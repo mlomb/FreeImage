@@ -1,0 +1,123 @@
+cmake_minimum_required(VERSION 2.6)
+
+project(FreeImage)
+
+set(HEADERS Source/CacheFile.h
+            Source/FreeImage.h
+            Source/FreeImageIO.h
+            Source/Plugin.h
+            Source/Quantizers.h
+            Source/ToneMapping.h
+            Source/Utilities.h
+            Source/FreeImage/PSDParser.h
+            Source/FreeImageToolkit/Filters.h
+            Source/FreeImageToolkit/Resize.h
+            Source/Metadata/FIRational.h
+            Source/Metadata/FreeImageTag.h
+)
+
+set(SRCS Source/FreeImage/BitmapAccess.cpp
+         Source/FreeImage/CacheFile.cpp
+         Source/FreeImage/ColorLookup.cpp
+         Source/FreeImage/Conversion.cpp
+         Source/FreeImage/Conversion16_555.cpp
+         Source/FreeImage/Conversion16_565.cpp
+         Source/FreeImage/Conversion24.cpp
+         Source/FreeImage/Conversion32.cpp
+         Source/FreeImage/Conversion4.cpp
+         Source/FreeImage/Conversion8.cpp
+         Source/FreeImage/ConversionRGBF.cpp
+         Source/FreeImage/ConversionType.cpp
+         Source/FreeImage/FreeImage.cpp
+         Source/FreeImage/FreeImageIO.cpp
+         Source/FreeImage/GetType.cpp
+         Source/FreeImage/Halftoning.cpp
+         Source/FreeImage/J2KHelper.cpp
+         Source/FreeImage/MemoryIO.cpp
+         Source/FreeImage/MultiPage.cpp
+         Source/FreeImage/NNQuantizer.cpp
+         Source/FreeImage/PSDParser.cpp
+         Source/FreeImage/PixelAccess.cpp
+         Source/FreeImage/Plugin.cpp
+         Source/FreeImage/PluginBMP.cpp
+         Source/FreeImage/PluginCUT.cpp
+         Source/FreeImage/PluginDDS.cpp
+         Source/FreeImage/PluginEXR.cpp
+         Source/FreeImage/PluginGIF.cpp
+         Source/FreeImage/PluginHDR.cpp
+         Source/FreeImage/PluginICO.cpp
+         Source/FreeImage/PluginIFF.cpp
+         Source/FreeImage/PluginJ2K.cpp
+         Source/FreeImage/PluginJP2.cpp
+         Source/FreeImage/PluginJPEG.cpp
+         Source/FreeImage/PluginKOALA.cpp
+         Source/FreeImage/PluginMNG.cpp
+         Source/FreeImage/PluginPCD.cpp
+         Source/FreeImage/PluginPCX.cpp
+         Source/FreeImage/PluginPFM.cpp
+         Source/FreeImage/PluginPICT.cpp
+         Source/FreeImage/PluginPNG.cpp
+         Source/FreeImage/PluginPNM.cpp
+         Source/FreeImage/PluginPSD.cpp
+         Source/FreeImage/PluginRAS.cpp
+         Source/FreeImage/PluginRAW.cpp
+         Source/FreeImage/PluginSGI.cpp
+         Source/FreeImage/PluginTARGA.cpp
+         Source/FreeImage/PluginWBMP.cpp
+         Source/FreeImage/PluginXBM.cpp
+         Source/FreeImage/PluginXPM.cpp
+         Source/FreeImage/ToneMapping.cpp
+         Source/FreeImage/WuQuantizer.cpp
+         Source/FreeImage/ZLibInterface.cpp
+         Source/FreeImage/tmoColorConvert.cpp
+         Source/FreeImage/tmoDrago03.cpp
+         Source/FreeImage/tmoFattal02.cpp
+         Source/FreeImage/tmoReinhard05.cpp
+         Source/FreeImageToolkit/BSplineRotate.cpp
+         Source/FreeImageToolkit/Background.cpp
+         Source/FreeImageToolkit/Channels.cpp
+         Source/FreeImageToolkit/ClassicRotate.cpp
+         Source/FreeImageToolkit/Colors.cpp
+         Source/FreeImageToolkit/CopyPaste.cpp
+         Source/FreeImageToolkit/Display.cpp
+         Source/FreeImageToolkit/Flip.cpp
+         Source/FreeImageToolkit/JPEGTransform.cpp
+         Source/FreeImageToolkit/MultigridPoissonSolver.cpp
+         Source/FreeImageToolkit/Rescale.cpp
+         Source/FreeImageToolkit/Resize.cpp
+         Source/Metadata/Exif.cpp
+         Source/Metadata/FIRational.cpp
+         Source/Metadata/FreeImageTag.cpp
+         Source/Metadata/IPTC.cpp
+         Source/Metadata/TagConversion.cpp
+         Source/Metadata/TagLib.cpp
+)
+
+# Include all the files for all the libraries
+include_directories(Source)
+include_directories(Source/Metadata)
+include_directories(Source/FreeImageToolkit)
+include_directories(Source/LibJPEG)
+include_directories(Source/LibPNG)
+include_directories(Source/ZLib)
+include_directories(Source/LibOpenJPEG)
+include_directories(Source/OpenEXR)
+include_directories(Source/OpenEXR/Half)
+include_directories(Source/OpenEXR/Iex)
+include_directories(Source/OpenEXR/IlmImf)
+include_directories(Source/OpenEXR/IlmThread)
+include_directories(Source/OpenEXR/Imath)
+include_directories(Source/OpenEXR/IexMath)
+include_directories(Source/LibRawLite)
+include_directories(Source/LibRawLite/dcraw)
+include_directories(Source/LibRawLite/internal)
+include_directories(Source/LibRawLite/libraw)
+include_directories(Source/LibRawLite/src)
+include_directories(Source/LibWebP)
+include_directories(Source/LibJXR)
+include_directories(Source/LibJXR/image/sys)
+include_directories(Source/LibJXR/common/include)
+include_directories(Source/LibJXR/jxrgluelib)
+
+add_definitions(-DOPJ_STATIC -DLIBRAW_NODLL -DFREEIMAGE_LIB)
+add_library(FreeImage STATIC  ${HEADERS} ${SRCS})
