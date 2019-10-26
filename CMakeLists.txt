@@ -5,8 +5,47 @@ project(FreeImage)
 file(GLOB FreeImage_SRC
     Source/*.h
     
-    Source/FreeImage/*.h
-    Source/FreeImage/*.cpp
+	Source/FreeImage/BitmapAccess.cpp
+	Source/FreeImage/CacheFile.cpp
+	Source/FreeImage/ColorLookup.cpp
+	Source/FreeImage/Conversion.cpp
+	Source/FreeImage/Conversion16_555.cpp
+	Source/FreeImage/Conversion16_565.cpp
+	Source/FreeImage/Conversion24.cpp
+	Source/FreeImage/Conversion32.cpp
+	Source/FreeImage/Conversion4.cpp
+	Source/FreeImage/Conversion8.cpp
+	Source/FreeImage/ConversionFloat.cpp
+	Source/FreeImage/ConversionRGB16.cpp
+	Source/FreeImage/ConversionRGBA16.cpp
+	Source/FreeImage/ConversionRGBAF.cpp
+	Source/FreeImage/ConversionRGBF.cpp
+	Source/FreeImage/ConversionType.cpp
+	Source/FreeImage/ConversionUINT16.cpp
+	Source/FreeImage/FreeImage.cpp
+	Source/FreeImage/FreeImageC.c
+	Source/FreeImage/FreeImageIO.cpp
+	Source/FreeImage/GetType.cpp
+	Source/FreeImage/Halftoning.cpp
+	Source/FreeImage/J2KHelper.cpp
+	Source/FreeImage/J2KHelper.h
+	Source/FreeImage/LFPQuantizer.cpp
+	Source/FreeImage/MemoryIO.cpp
+	Source/FreeImage/MNGHelper.cpp
+	Source/FreeImage/MultiPage.cpp
+	Source/FreeImage/NNQuantizer.cpp
+	Source/FreeImage/PixelAccess.cpp
+	Source/FreeImage/Plugin.cpp
+	Source/FreeImage/PluginBMP.cpp
+	Source/FreeImage/PluginJPEG.cpp
+	Source/FreeImage/PluginPNG.cpp
+	Source/FreeImage/tmoColorConvert.cpp
+	Source/FreeImage/tmoDrago03.cpp
+	Source/FreeImage/tmoFattal02.cpp
+	Source/FreeImage/tmoReinhard05.cpp
+	Source/FreeImage/ToneMapping.cpp
+	Source/FreeImage/WuQuantizer.cpp
+	Source/FreeImage/ZLibInterface.cpp
     
     Source/FreeImageToolkit/*.h
     Source/FreeImageToolkit/*.cpp
